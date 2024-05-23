@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { ProyectoEntity } from 'src/proyecto/proyecto.entity/proyecto.entity';
-import { Column, Entity, JoinColumn, Long, OneToOne, PrimaryGeneratedColumn } from 'typeorm'; 
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'; 
 
 @Entity()
 export class EstudianteEntity {

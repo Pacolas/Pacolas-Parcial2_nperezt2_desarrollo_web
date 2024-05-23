@@ -12,6 +12,9 @@ export class EstudianteService {
         private readonly estudianteRepository: Repository<EstudianteEntity>
     ){}
     async create(estudiante: EstudianteEntity): Promise<EstudianteEntity> {
+        if (estudiante.codigo.toString().length <10){
+            throw new BusinessLogicException("The estudiante code is not valid.", BusinessError.PRECONDITION_FAILED);
+        }
         return await this.estudianteRepository.save(estudiante);
     }
 
