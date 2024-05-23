@@ -7,6 +7,10 @@ import { EstudianteModule } from './estudiante/estudiante.module';
 import { PropuestaModule } from './propuesta/propuesta.module';
 import { ProfesorModule } from './profesor/profesor.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ProyectoEntity } from './proyecto/proyecto.entity/proyecto.entity';
+import { EstudianteEntity } from './estudiante/estudiante.entity/estudiante.entity';
+import { PropuestaEntity } from './propuesta/propuesta.entity/propuesta.entity';
+import { ProfesorEntity } from './profesor/profesor.entity/profesor.entity';
 
 @Module({
   imports: [ProyectoModule, EstudianteModule, PropuestaModule, ProfesorModule,
@@ -17,7 +21,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'postgres',
       password: 'password',
       database: 'parcial2',
-      entities: [ProyectoModule, EstudianteModule, PropuestaModule, ProfesorModule],
+      entities: [ProyectoEntity, EstudianteEntity, PropuestaEntity, ProfesorEntity],
       dropSchema: true,
       synchronize: true,
       keepConnectionAlive: true

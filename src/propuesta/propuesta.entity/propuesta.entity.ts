@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
 import { ProfesorEntity } from 'src/profesor/profesor.entity/profesor.entity';
 import { ProyectoEntity } from 'src/proyecto/proyecto.entity/proyecto.entity';
-import { Column, Entity, JoinColumn, Long, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm'; 
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm'; 
 @Entity()
 export class PropuestaEntity {
     @PrimaryGeneratedColumn('uuid') 
-    id: Long; 
+    id: string; 
     
     @Column() 
     titulo: string; 
@@ -15,6 +15,7 @@ export class PropuestaEntity {
     
     @Column() 
     palabra_clave: string; 
+    
     @OneToOne(() => ProyectoEntity, proyecto => proyecto.propuesta) 
     @JoinColumn() 
     proyecto: ProyectoEntity; 

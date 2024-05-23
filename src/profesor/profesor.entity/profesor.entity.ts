@@ -4,7 +4,7 @@ import { Column, Entity, Long, OneToMany, PrimaryGeneratedColumn } from 'typeorm
 @Entity()
 export class ProfesorEntity {
 @PrimaryGeneratedColumn('uuid') 
-id: Long; 
+id: string; 
 
 @Column() 
 nombre: string; 

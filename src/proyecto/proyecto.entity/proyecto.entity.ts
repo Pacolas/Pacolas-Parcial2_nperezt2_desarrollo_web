@@ -5,7 +5,7 @@ import { Column, Entity, JoinColumn, Long, OneToOne, PrimaryGeneratedColumn } fr
 @Entity()
 export class ProyectoEntity {
     @PrimaryGeneratedColumn('uuid') 
-    id: Long; 
+    id: string; 
     
     @Column() 
     fechaInicio: Date; 
