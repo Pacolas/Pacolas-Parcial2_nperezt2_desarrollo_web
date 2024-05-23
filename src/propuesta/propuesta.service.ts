@@ -12,6 +12,9 @@ export class PropuestaService {
         private readonly propuestaRepository: Repository<PropuestaEntity>
     ){}
     async create(propuesta: PropuestaEntity): Promise<PropuestaEntity> {
+        if (propuesta.titulo === ""){
+            throw new BusinessLogicException("The propuesta title cannot be empty", BusinessError.PRECONDITION_FAILED);
+        }
         return await this.propuestaRepository.save(propuesta);
     }
     async findOne(id: string): Promise<PropuestaEntity> {
@@ -28,7 +31,9 @@ export class PropuestaService {
         const propuesta: PropuestaEntity = await this.propuestaRepository.findOne({where:{id}});
         if (!propuesta)
           throw new BusinessLogicException("The propuesta with the given id was not found", BusinessError.NOT_FOUND);
-      
+        if (propuesta.proyecto == null){
+            throw new BusinessLogicException("The propuesta cannot be deleted if it has a assigned project.", BusinessError.PRECONDITION_FAILED);
+        }
         await this.propuestaRepository.remove(propuesta);
     }
 
