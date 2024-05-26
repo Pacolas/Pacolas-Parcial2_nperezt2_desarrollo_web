@@ -2,7 +2,7 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Post, UseInterceptors } from '@nestjs/common';
 import { PropuestaService } from './propuesta.service';
 import { BusinessErrorsInterceptor } from 'src/shared/interceptors/business-errors.interceptor';
-import { PropuestaEntity } from './propuesta.entity/propuesta.entity';
+import { PropuestaEntity } from './propuesta.entity';
 import { plainToInstance } from 'class-transformer';
 import { PropuestaDto } from './propuesta.dto/propuesta.dto';
 

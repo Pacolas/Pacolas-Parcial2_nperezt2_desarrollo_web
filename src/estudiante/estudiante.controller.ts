@@ -4,7 +4,7 @@ import { EstudianteService } from './estudiante.service';
 import { plainToInstance } from 'class-transformer';
 import { BusinessErrorsInterceptor } from 'src/shared/interceptors/business-errors.interceptor';
 import { EstudianteDto } from './estudiante.dto/estudiante.dto';
-import { EstudianteEntity } from './estudiante.entity/estudiante.entity';
+import { EstudianteEntity } from './estudiante.entity';
 
 @Controller('estudiante')
 @UseInterceptors(BusinessErrorsInterceptor)

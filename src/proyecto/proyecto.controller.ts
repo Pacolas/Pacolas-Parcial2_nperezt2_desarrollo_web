@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Body, Controller, Post, UseInterceptors } from '@nestjs/common';
 import { ProyectoDto } from './proyecto.dto/proyecto.dto';
-import { ProyectoEntity } from './proyecto.entity/proyecto.entity';
+import { ProyectoEntity } from './proyecto.entity';
 import { plainToInstance } from 'class-transformer';
 import { ProyectoService } from './proyecto.service';
 import { BusinessErrorsInterceptor } from 'src/shared/interceptors/business-errors.interceptor';

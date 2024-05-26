@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "93673d49-e3ba-4f95-a913-684d93c0ad58",
+		"name": "___PARCIAL_PROYECTO",
+		"description": "Documentation for the API used as an example in the MISW4403 MISO Course.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23292417"
+	},
+	"item": [
+		{
+			"name": "Add a proyecto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"proyecto_id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"d9b1d7e3-45b5-456d-947e-2c3659f4df27\",\n  \"fechaInicio\": \"2024-01-01T00:00:00.000Z\",\n  \"fechaFin\": \"2024-12-31T23:59:59.999Z\",\n  \"url\": \"http://example.com/project\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/proyecto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"proyecto"
+					]
+				},
+				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+			},
+			"response": [
+				{
+					"name": "Add a museum",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Smithsonian national museum of natural history\",\n    \"description\": \"The world's most popular natural history museum is dedicated to understanding the natural world and our place in it. Delve into the fascinating story of our planet, from its fiery beginnings through billions of years of transformation, and explore life on Earth through exhibitions and activities, collection objects and research that happens in the lab and in the field. The museum is larger than 18 football fields and is home to the largest natural history collection in the world.\",\n    \"address\": \"10th St. & Constitution Ave. NW, Washington, DC\",\n    \"city\": \"Washington DC\",\n    \"image\": \"https://www.si.edu/sites/default/files/newsdesk/fact_sheets/nhb2015-02891.jpg\"\n }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/museums",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"museums"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n   \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n   \"name\": \"Smithsonian national museum of natural history\",\n   \"description\": \"The world's most popular natural history museum is dedicated to understanding the natural world and our place in it. Delve into the fascinating story of our planet, from its fiery beginnings through billions of years of transformation, and explore life on Earth through exhibitions and activities, collection objects and research that happens in the lab and in the field. The museum is larger than 18 football fields and is home to the largest natural history collection in the world.\",\n   \"address\": \"10th St. & Constitution Ave. NW, Washington, DC\",\n   \"city\": \"Washington DC\",\n   \"image\": \"https://www.si.edu/sites/default/files/newsdesk/fact_sheets/nhb2015-02891.jpg\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Add a invalid proyecto 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"",
+							"",
+							"pm.test(\"Status code is 412\", function () {",
+							"    pm.response.to.have.status(412);",
+							"});",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"The project ends before it starts\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"d9b1d7e3-45b5-456d-947e-2c3659f4df27\",\n  \"fechaInicio\": \"2024-12-01T00:00:00.000Z\",\n  \"fechaFin\": \"2024-11-31T23:59:59.999Z\",\n  \"url\": \"http://example.com/project\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/proyecto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"proyecto"
+					]
+				},
+				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+			},
+			"response": [
+				{
+					"name": "Add a museum",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Smithsonian national museum of natural history\",\n    \"description\": \"The world's most popular natural history museum is dedicated to understanding the natural world and our place in it. Delve into the fascinating story of our planet, from its fiery beginnings through billions of years of transformation, and explore life on Earth through exhibitions and activities, collection objects and research that happens in the lab and in the field. The museum is larger than 18 football fields and is home to the largest natural history collection in the world.\",\n    \"address\": \"10th St. & Constitution Ave. NW, Washington, DC\",\n    \"city\": \"Washington DC\",\n    \"image\": \"https://www.si.edu/sites/default/files/newsdesk/fact_sheets/nhb2015-02891.jpg\"\n }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/museums",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"museums"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n   \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n   \"name\": \"Smithsonian national museum of natural history\",\n   \"description\": \"The world's most popular natural history museum is dedicated to understanding the natural world and our place in it. Delve into the fascinating story of our planet, from its fiery beginnings through billions of years of transformation, and explore life on Earth through exhibitions and activities, collection objects and research that happens in the lab and in the field. The museum is larger than 18 football fields and is home to the largest natural history collection in the world.\",\n   \"address\": \"10th St. & Constitution Ave. NW, Washington, DC\",\n   \"city\": \"Washington DC\",\n   \"image\": \"https://www.si.edu/sites/default/files/newsdesk/fact_sheets/nhb2015-02891.jpg\"\n}\n"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}

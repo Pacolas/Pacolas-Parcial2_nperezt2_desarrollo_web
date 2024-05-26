@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
-import { ProyectoEntity } from './proyecto.entity/proyecto.entity';
+import { ProyectoEntity } from './proyecto.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProyectoService } from './proyecto.service';
 import { ProyectoController } from './proyecto.controller';
