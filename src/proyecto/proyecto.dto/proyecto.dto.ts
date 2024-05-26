@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { IsDate, IsNotEmpty, IsUrl } from "class-validator";
 
-/* eslint-disable prettier/prettier */
 export class ProyectoDto {
 
     @IsDate()
