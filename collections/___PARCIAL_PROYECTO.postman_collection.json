@@ -56,7 +56,7 @@
 						"proyecto"
 					]
 				},
-				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+				"description": "POST Add proyecto.\n\nEndpoint: /proyecto\n\nEste enpoint recibe un dato plano de tranferencia de informacion que modela al proyecto. En este caso, se debe garantizar que ell proyecto inicie antes de su fecha de finalizacion.\n\nEn caso de funcionar correctamente, se retorna un codigo 2001. De lo contrario se retornara un metodo 412."
 			},
 			"response": [
 				{
@@ -154,7 +154,7 @@
 						"proyecto"
 					]
 				},
-				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+				"description": "POST Add proyecto.\n\nEndpoint: /proyecto\n\nEste enpoint recibe un dato plano de tranferencia de informacion que modela al proyecto. En este caso, se debe garantizar que ell proyecto inicie antes de su fecha de finalizacion.\n\nEn caso de funcionar correctamente, se retorna un codigo 2001. De lo contrario se retornara un metodo 412.\n\nEn este caso, se utilizo un ejemplo donde un proyecto finaliza el 31 de Noviembre, mientras que su fecha de inicio es el primero de Diciembre. Esto no es valido, lo cual retornara un metodo 412 y demostrara que se cumplen las reglas de negocio."
 			},
 			"response": [
 				{

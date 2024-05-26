@@ -56,7 +56,7 @@
 						"profesor"
 					]
 				},
-				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+				"description": "POST Add profesor.\n\nEndpoint: /profesor\n\nEste enpoint recibe un dato plano de tranferencia de informacion que modela al profesor. En este caso, se debe garantizar que el profesor sea parte de un grupo de investigacion. En caso de lograrse, se retorna un codigo 201"
 			},
 			"response": [
 				{
@@ -133,7 +133,8 @@
 						"profesor",
 						"{{profesor_id}}"
 					]
-				}
+				},
+				"description": "Get one Profesor.\n\nEndpoint /profesor/id/{id}\n\nEste metodo recibe un uuid de un profesor y retorna la informacion del mismo. Si el profesor existe, se retornada un codigo 200, en caso contrario se retornara un codigo 404."
 			},
 			"response": [
 				{
@@ -196,7 +197,8 @@
 						"profesor",
 						"7b15e3d1-45b5-456d-947e-2c3659f4df22"
 					]
-				}
+				},
+				"description": "Get one Profesor.\n\nEste metodo recibe un uuid de un profesor y retorna la informacion del mismo. Si el profesor existe, se retornada un codigo 200, en caso contrario se retornara un codigo 404."
 			},
 			"response": [
 				{
@@ -260,7 +262,8 @@
 						"id",
 						"{{profesor_id}}"
 					]
-				}
+				},
+				"description": "Delete A Profesor.\n\nEste metodo recibe un uuid de un profesor y retorna la informacion del mismo, sin embargo elimina el objeto previamente. Si el profesor existe, se retornada un codigo 204, en caso contrario se retornara un codigo 404."
 			},
 			"response": [
 				{
@@ -321,7 +324,8 @@
 						"id",
 						"7b15e3d1-45b5-456d-947e-2c3659f4df22"
 					]
-				}
+				},
+				"description": "Delete A Profesor.\n\nEndpoint /profesor/id/{id}\n\nEste metodo recibe un uuid de un profesor y retorna la informacion del mismo, sin embargo elimina el objeto previamente. Si el profesor existe, se retornada un codigo 204, en caso contrario se retornara un codigo 404."
 			},
 			"response": [
 				{
@@ -477,7 +481,8 @@
 						"cedula",
 						"{{profesor_ced}}"
 					]
-				}
+				},
+				"description": "Delete A Profesor.\n\nEndpoint /profesor/cedula/{cedula}\n\nEste metodo recibe la cedula de un profesor y retorna la informacion del mismo, sin embargo elimina el objeto previamente. Si el profesor existe, se retornada un codigo 204, en caso contrario se retornara un codigo 404."
 			},
 			"response": [
 				{
@@ -543,7 +548,8 @@
 						"cedula",
 						"1023"
 					]
-				}
+				},
+				"description": "Delete A Profesor.\n\nEndpoint /profesor/cedula/{cedula}\n\nEste metodo recibe la cedula de un profesor y retorna la informacion del mismo, sin embargo elimina el objeto previamente. Si el profesor existe, se retornada un codigo 204, en caso contrario se retornara un codigo 404."
 			},
 			"response": [
 				{

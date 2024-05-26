@@ -56,7 +56,7 @@
 						"propuesta"
 					]
 				},
-				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+				"description": "POST add a propuesta\n\n/propuesta\n\nEste enpoint recibe un dato plano de tranferencia de informacion que modela una propuesta. En este caso, se debe garantizar que la propuesta no tenga su titulo vacio. En caso de lograrse se devuelve un codigo 201, de lo contrario se recibe el codigo 412."
 			},
 			"response": [
 				{
@@ -154,7 +154,7 @@
 						"propuesta"
 					]
 				},
-				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+				"description": "POST add a propuesta\n\n/propuesta\n\nEste enpoint recibe un dato plano de tranferencia de informacion que modela una propuesta. En este caso, se debe garantizar que la propuesta no tenga su titulo vacio. En caso de lograrse se devuelve un codigo 201, de lo contrario se recibe el codigo 412.\n\nEn este caso, no funcionara la operacion debido que no se cumple la condicion de que el titulo de la propuesta exista."
 			},
 			"response": [
 				{
@@ -231,7 +231,8 @@
 						"propuesta",
 						"{{propuesta_id}}"
 					]
-				}
+				},
+				"description": "GET One propuesta.\n\n/propuesta/id\n\nEn este caso, se recibe el uuid de la propuesta a traves del endpoint y se retorna la propuesta con ese identificador. En caso de existir, se recibe el codigo 200, de lo contrario se recibira el codigo 404."
 			},
 			"response": [
 				{
@@ -263,7 +264,7 @@
 			]
 		},
 		{
-			"name": "Get one invalid profesor",
+			"name": "Get one invalid propuesta",
 			"event": [
 				{
 					"listen": "test",
@@ -294,7 +295,8 @@
 						"propuesta",
 						"7b15e3d1-45b5-456d-947e-2c3659f4df22"
 					]
-				}
+				},
+				"description": "GET One propuesta.\n\n/propuesta/id\n\nEn este caso, se recibe el uuid de la propuesta a traves del endpoint y se retorna la propuesta con ese identificador. En caso de existir, se recibe el codigo 200, de lo contrario se recibira el codigo 404.\n\nEn este caso, se mostro la reaccion ante un codigo inexistente para confirmar que funciona correctamente el metodo."
 			},
 			"response": [
 				{
@@ -357,7 +359,8 @@
 						"propuesta",
 						"{{propuesta_id}}"
 					]
-				}
+				},
+				"description": "DELETE One propuesta.\n\n/propuesta/id\n\nEn este caso, se recibe el uuid de la propuesta a traves del endpoint y se retorna la propuesta con ese identificado, justo despues de haber borrado la informacion. En caso de existir, se recibe el codigo 204, de lo contrario se recibira el codigo 404.\n\nEn este caso, se mostro la reaccion ante un codigo inexistente para confirmar que funciona correctamente el metodo."
 			},
 			"response": [
 				{
@@ -417,7 +420,8 @@
 						"propuesta",
 						"7b15e3d1-45b5-456d-947e-2c3659f4df22"
 					]
-				}
+				},
+				"description": "DELETE One propuesta.\n\n/propuesta/id\n\nEn este caso, se recibe el uuid de la propuesta a traves del endpoint y se retorna la propuesta con ese identificado, justo despues de haber borrado la informacion. En caso de existir, se recibe el codigo 204, de lo contrario se recibira el codigo 404.\n\nEn este caso, se mostro la reaccion ante un codigo inexistente para confirmar que funciona correctamente el metodo."
 			},
 			"response": [
 				{
@@ -462,7 +466,8 @@
 						"v1",
 						"propuesta"
 					]
-				}
+				},
+				"description": "GET All propuestas\n\n/propuestas\n\nSe retornaran todas las propuestas almacenadas. En caso de no haber, se retorna una lista vacia."
 			},
 			"response": []
 		}

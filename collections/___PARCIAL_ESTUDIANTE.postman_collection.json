@@ -56,7 +56,7 @@
 						"estudiante"
 					]
 				},
-				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+				"description": "POST Add estudiante.\n\nEndpoint: /estudiante\n\nEste enpoint recibe un dato plano de tranferencia de informacion que modela al estudiante. En este caso, se debe garantizar que el codigo tenga 10 digitos.\n\nEn caso de funcionar correctamente, se retorna un codigo 2001."
 			},
 			"response": [
 				{
@@ -156,7 +156,7 @@
 						"estudiante"
 					]
 				},
-				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+				"description": "POST Add estudiante.\n\nEndpoint: /estudiante\n\nEste enpoint recibe un dato plano de tranferencia de informacion que modela al estudiante. En este caso, se debe garantizar que el codigo tenga 10 digitos.\n\nEn este caso, el post no funciona porque el codigo del estudiante no tiene 10 digitos. Esto es importante para demostrar que no funciona porque los datos no son validos. Se espera un codigo 412."
 			},
 			"response": [
 				{
@@ -233,7 +233,8 @@
 						"estudiante",
 						"{{estudiante_id}}"
 					]
-				}
+				},
+				"description": "GET Get one estudiante.\n\nEndpoint: /estudiante/id\n\nEste endpoint recibe un id de usuario y retorna el usuario con ese codigo. En caso de lograrse, se obtendra un codigo 200."
 			},
 			"response": [
 				{
@@ -296,7 +297,8 @@
 						"estudiante",
 						"7b15e3d1-45b5-456d-947e-2c3659f4df22"
 					]
-				}
+				},
+				"description": "GET Get one estudiante.\n\nEndpoint: /estudiante/id\n\nEste endpoint recibe un id de usuario y retorna el usuario con ese codigo. En caso de lograrse, se obtendra un codigo 200. Sin embargo, habra un codigo 404 si no existe un usuario con ese codigo."
 			},
 			"response": [
 				{
